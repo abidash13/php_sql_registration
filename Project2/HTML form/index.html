@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div>
+    </div>
+    <div class="container">
+      <div class="row col-md-6 col-md-offset-3">
+        <div class="panel panel-primary">
+          <div class="panel-heading text-center">
+            <h1>Registration Form</h1>
+          </div>
+          <div class="panel-body">
+            <form action="connect.php" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="roll_number">Roll Number </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="roll_number"
+                  name="roll_number"
+                />
+              </div>
+              <h3>Time Stamp</h3>
+              <input type="hidden" name="timestamp">
+              <h4 id="currenttime"></h4>
+              <h4 id="todaysdate"></h4>
+            </form>
+            <input type="submit" class="btn btn-primary" />
+          </div>
+          <script>  
+            let time = document.getElementById("currenttime");
+            setInterval(() =>{
+              let d = new Date();
+              time.innerHTML = d.toLocaleString();
+            },1000)
+          </script>
+          <script src="script.js"></script>
+          <div class="panel-footer text-right">
+            <small>&copy; </small>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </body>
+</html>
